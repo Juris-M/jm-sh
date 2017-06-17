@@ -40,9 +40,13 @@ function add-xpi-to-github-release () {
 
     # Get content-length of downloaded file
     SIZE=$(stat -c %s "${RELEASE_DIR}/${CLIENT}-v${VERSION}-fx.xpi")
+    
+    echo $SIZE
+    echo $UPLOAD_URL
+    echo "${RELEASE_DIR}/${CLIENT}-v${VERSION}-fx.xpi"
 
     # Upload "asset"
-    NAME=$(curl -k --fail --silent --show-error \
+    NAME=$(curl --fail --silent --show-error \
         --user "${DOORKEY}" \
         -H "Accept: application/vnd.github.manifold-preview" \
         -H "Content-Type: application/x-xpinstall" \
