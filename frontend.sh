@@ -81,7 +81,6 @@ case $RELEASE in
         refresh-style-modules
         build-the-plugin
         git-checkin-all-and-push
-        create-github-release
         add-xpi-to-our-law
         repo-finish 0 "Released as BETA (uploaded to our.law, prerelease)"
         ;;
@@ -106,7 +105,6 @@ case $RELEASE in
         echo "D"
         git-checkin-all-and-push
         echo "E"
-        create-github-release
         echo "F"
         add-xpi-to-our-law
         echo "G"
