@@ -82,8 +82,8 @@ case $RELEASE in
         build-the-plugin
         git-checkin-all-and-push
         create-github-release
-        add-xpi-to-github-release
-        repo-finish 0 "Released as BETA (uploaded to GitHub, prerelease)"
+        add-xpi-to-our-law
+        repo-finish 0 "Released as BETA (uploaded to our.law, prerelease)"
         ;;
     3)
         echo "(3)"
@@ -108,11 +108,11 @@ case $RELEASE in
         echo "E"
         create-github-release
         echo "F"
-        add-xpi-to-github-release
+        add-xpi-to-our-law
         echo "G"
         publish-update
         echo "H"
-        repo-finish 0 "Released as FINAL (uploaded to GitHub, full wax)"
+        repo-finish 0 "Released as FINAL (uploaded to our.law, full wax)"
         ;;
 esac
 
