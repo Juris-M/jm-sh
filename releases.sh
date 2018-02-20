@@ -7,7 +7,7 @@ function add-xpi-to-our-law () {
     SIZE=$(stat -c %s "${RELEASE_DIR}/${CLIENT}-v${VERSION}-fx.xpi")
 
     # Upload "asset"
-    scp "${RELEASE_DIR}/${CLIENT}-v${VERSION}-fx.xpi" our.law.nagoya-u.ac.jp:/var/www/nginx/download/
+    scp "${RELEASE_DIR}/${CLIENT}-v${VERSION}-fx.xpi" our.law.nagoya-u.ac.jp:/var/www/nginx/download/"${FORK}"/
     echo "Uploaded ${NAME}"
 }
 
@@ -25,7 +25,7 @@ function publish-update () {
     fi
     git commit -m "Refresh update-TEMPLATE.rdf" update-TEMPLATE.rdf >> "${LOG_FILE}" 2<&1
     # Slip the update manifest over to our.law
-    scp update-TEMPLATE.rdf our.law.nagoya-u.ac.jp:/var/www/nginx/download/"${FORK}"/update/
+    scp update-TEMPLATE.rdf our.law.nagoya-u.ac.jp:/var/www/nginx/download/"${FORK}"/update/update.rdf
     
     cp update-TEMPLATE.rdf update-TRANSFER.rdf
     git checkout gh-pages >> "${LOG_FILE}" 2<&1
