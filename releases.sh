@@ -25,7 +25,7 @@ function publish-update () {
     fi
     git commit -m "Refresh update-TEMPLATE.rdf" update-TEMPLATE.rdf >> "${LOG_FILE}" 2<&1
     # Slip the update manifest over to our.law
-    scp update-TEMPLATE.rdf https://our.law.nagoya-u.ac.jp/
+    scp update-TEMPLATE.rdf our.law.nagoya-u.ac.jp:/var/www/nginx/download/"${FORK}"/update/
     
     cp update-TEMPLATE.rdf update-TRANSFER.rdf
     git checkout gh-pages >> "${LOG_FILE}" 2<&1
