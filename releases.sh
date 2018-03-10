@@ -2,11 +2,11 @@ function create-github-release () {
     if [ "$BETA" -gt "0" ]; then
         RELEASE_TAG="v${VERSION_STUB}beta"
         RELEASE_NAME="Beta pre-release of v${VERSION_STUB}"
-        RELEASE_BODY="To install, click on the *.xpi link for the beta version you wish to install. Beta pre-releases will update automatically when the final release appears."
+        RELEASE_BODY="This is a legacy Firefox plugin, for use in Zotero/Jurism Standalone clients. To install the desired file below and install it via the Add-ins menu."
     else
         RELEASE_TAG="v${VERSION_STUB}"
         RELEASE_NAME="v${VERSION_STUB} final"
-        RELEASE_BODY="To install the plugin, click on the &ldquo;${CLIENT}-v${VERSION_STUB}.xpi&rdquo; file below while viewing this page in Firefox. This plugin is signed for use in Firefox and will update automatically."
+        RELEASE_BODY="This is a legacy Firefox plugin, for use in Zotero/Jurism Standalone clients. To install the plugin, download the &ldquo;${CLIENT}-v${VERSION_STUB}.xpi&rdquo; file below and install it via the Add-ins menu."
     fi
     UPLOAD_URL=$(curl -k --fail --silent \
         --user "${DOORKEY}" \
